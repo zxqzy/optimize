@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="red">啦啦啦</div>
+  </body>
+  <script type="module">
+    // import css from './index.css'
+    import jss from './index.es.js'
+    // 为什么没有在 CSS 或者 defer 后执行
+    // 网络慢了也没有模拟出来
+    document.addEventListener('DOMContentLoaded', function () {
+        debugger;
+      console.log('DOM content has been fully loaded and parsed.');
+    });
+  </script>
+  <!-- <script src="./index.js" defer></script> -->
+</html>
