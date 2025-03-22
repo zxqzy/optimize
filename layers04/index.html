@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first {
+            color: red;
+            /**
+                告诉浏览器这个属性未来会变化，让浏览器分层，减少重排与重绘
+            */
+            will-change: transform;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">lll</div>
+    <div class="second">第二排</div>
+    <div class="second">第二排</div>
+    <div class="second">第二排</div>
+    <div class="second">第二排</div>
+    <div class="second">第二排</div>
+    <div class="second">第二排</div>
+    <div class="second">第二排</div>
+    <div class="second">第二排</div>
+</body>
+</html>
