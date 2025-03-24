@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: blue;
+      transition: transform 0.3s;
+    }
+
+    .animate {
+      transform: translateX(300px);
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="cssBox"></div>
+
+  <script>
+    const box = document.getElementById('cssBox');
+    let isAnimating = false;
+
+    // 点击页面触发动画
+    document.addEventListener('click', () => {
+      isAnimating = !isAnimating;
+      box.classList.toggle('animate', isAnimating);
+    });
+  </script>
+</body>
+</html>

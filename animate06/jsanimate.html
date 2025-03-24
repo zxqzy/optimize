@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="jsBox"></div>
+
+  <script>
+    const box = document.getElementById('jsBox');
+    let startTime = null;
+    let isAnimating = true;
+
+    function animate(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const distance = (progress / 1000) * 200; // 200px/s 速度移动
+
+      // 通过修改 left 触发重排和重绘
+      box.style.left = Math.min(distance, 300) + 'px';
+
+      if (distance < 300 && isAnimating) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    requestAnimationFrame(animate);
+
+    // 点击页面重置动画
+    document.addEventListener('click', () => {
+      box.style.left = '0';
+      startTime = null;
+      requestAnimationFrame(animate);
+    });
+  </script>
+</body>
+</html>
